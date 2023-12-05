@@ -18,8 +18,13 @@ public class App3 extends Application{
     public void start(Stage primaryStage) throws Exception {
         window = primaryStage;
         Button button = new Button("Click me");
-        button.setOnAction(e -> AllertBox.display("Title of Window", "Allert box!"));
-       
+        //button.setOnAction(e -> AllertBox.display("Title of Window", "Allert box!"));
+        button.setOnAction(e ->{
+            boolean result = ConfirmBox.display("Title fo window", "Are you sure to close the window?");
+            System.out.println(result);
+        });
+
+
         StackPane layout = new StackPane();
         layout.getChildren().addAll(button);
         Scene scene = new Scene(layout, 300, 300);
